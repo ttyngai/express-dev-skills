@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express To-Do</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/devSkills">Dev Skill list</a>
+    <h1>Developer Skills</h1>
+    <ul>
+      <% devSkills.forEach(function(d) { %>
+      <li>
+        <a href="/devSkills/<%= d.id %>"><%= d.devSkill %></a>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

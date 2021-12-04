@@ -1,18 +1,18 @@
 const devSkills = [
-{id:1001, devSkill= 'Express', mastery: false },
-{id:1002, devSkill= 'Javascript', mastery: false },
-{id:1003, devSkill= 'HTML', mastery: false },
-]
+  { id: 1001, devSkill: 'Express', mastery: 'Hyper Novice' },
+  { id: 1002, devSkill: 'Javascript', mastery: 'Novice' },
+  { id: 1003, devSkill: 'HTML', mastery: 'Novice' },
+];
 
 module.exports = {
-getAll, getOne
+  getAll,
+  getOne,
+};
+
+function getAll() {
+  return devSkills;
 }
 
-
-function getAll(){
-    return devSkills
-}
-
-function getOne(id){
-    return devSkills.find(devSkill=> devSkill.id === id)
+function getOne(id) {
+  return devSkills.find((devSkill) => devSkill.id == id);
 }

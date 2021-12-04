@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+// todo CRUD functions
+const devSkillsCtrl = require('../controllers/devSkills');
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', devSkillsCtrl.index);
+router.get('/:id', devSkillsCtrl.show);
 
 module.exports = router;
