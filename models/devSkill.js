@@ -22,7 +22,7 @@ function getOne(id) {
 
 function create(devSkillObj) {
   devSkillObj.id = Math.floor(Math.random() * 1000);
-  devSkillObj.mastery = 'Newbie';
+  devSkillObj.mastery = devSkillObj.mastery;
   devSkills.push(devSkillObj);
 }
 
