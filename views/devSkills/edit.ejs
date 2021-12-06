@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express To-Do</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/devSkills">Dev Skill list</a>
+    <a href="/devSkills/new">New Dev Skill</a>
+    <h1>Edit Dev Skill</h1>
+
+    <form
+      action="/devSkills/<%= devSkill.id%>?_method=PUT"
+      method="POST"
+      autocomplete="off"
+    >
+      <input name="devSkill" value="<%= devSkill.devSkill%>" />
+      <input name="mastery" value="<%= devSkill.mastery%>" />
+      <button type="submit" class="btn btn-primary">Save Todo</button>
+    </form>
+  </body>
+</html>

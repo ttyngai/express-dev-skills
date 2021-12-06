@@ -6,6 +6,8 @@ module.exports = {
   new: newDevSkill,
   create,
   delete: deleteOne,
+  editPage,
+  update,
 };
 
 function index(req, res) {
@@ -32,6 +34,15 @@ function newDevSkill(req, res) {
 }
 function deleteOne(req, res) {
   DevSkill.delete(req.params.id);
-  // console.log(req.params.id);
   res.redirect('/devSkills');
+}
+function editPage(req, res) {
+  let devSkill = DevSkill.getOne(req.params.id);
+  res.render(`devSkills/edit`, { devSkill });
+}
+
+function update(req, res) {
+  DevSkill.update(req.params.id, req.body);
+
+  res.redirect(`/devSkills/${req.params.id}`);
 }

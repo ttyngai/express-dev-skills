@@ -9,6 +9,7 @@ module.exports = {
   getOne,
   create,
   delete: deleteOne,
+  update,
 };
 
 function getAll() {
@@ -21,11 +22,18 @@ function getOne(id) {
 
 function create(devSkillObj) {
   devSkillObj.id = Math.floor(Math.random() * 1000);
-  devSkillObj.mastery = false;
+  devSkillObj.mastery = 'Newbie';
   devSkills.push(devSkillObj);
 }
 
 function deleteOne(id) {
   const devSkillIdx = devSkills.findIndex((devSkill) => devSkill.id == id);
   devSkills.splice(devSkillIdx, 1);
+}
+
+function update(id, body) {
+  console.log(id, body);
+  const devSkillIdx = devSkills.findIndex((devSkill) => devSkill.id == id);
+  devSkills[devSkillIdx].devSkill = body.devSkill;
+  devSkills[devSkillIdx].mastery = body.mastery;
 }
