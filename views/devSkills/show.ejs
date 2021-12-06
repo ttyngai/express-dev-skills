@@ -9,7 +9,11 @@
   <body>
     <a href="/">Home</a>
     <a href="/devSkills">My skills</a>
+    <a href="/devSkills/new">New Dev Skill</a>
     <h3><%= devSkill.devSkill %></h3>
     <h3>Proficieny: <%= devSkill.mastery%></h3>
+    <form action="/devSkills/<%= devSkill.id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-danger">X</button>
+    </form>
   </body>
 </html>

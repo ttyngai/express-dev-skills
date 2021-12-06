@@ -7,6 +7,8 @@ const devSkills = [
 module.exports = {
   getAll,
   getOne,
+  create,
+  delete: deleteOne,
 };
 
 function getAll() {
@@ -15,4 +17,15 @@ function getAll() {
 
 function getOne(id) {
   return devSkills.find((devSkill) => devSkill.id == id);
+}
+
+function create(devSkillObj) {
+  devSkillObj.id = Math.floor(Math.random() * 1000);
+  devSkillObj.mastery = false;
+  devSkills.push(devSkillObj);
+}
+
+function deleteOne(id) {
+  const devSkillIdx = devSkills.findIndex((devSkill) => devSkill.id == id);
+  devSkills.splice(devSkillIdx, 1);
 }

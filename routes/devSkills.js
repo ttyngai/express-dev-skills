@@ -6,6 +6,9 @@ const devSkillsCtrl = require('../controllers/devSkills');
 
 /* GET users listing. */
 router.get('/', devSkillsCtrl.index);
+router.get('/new', devSkillsCtrl.new);
 router.get('/:id', devSkillsCtrl.show);
+router.post('/', devSkillsCtrl.create);
+router.delete('/:id', devSkillsCtrl.delete);
 
 module.exports = router;

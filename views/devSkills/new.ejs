@@ -10,13 +10,11 @@
     <a href="/">Home</a>
     <a href="/devSkills">Dev Skill list</a>
     <a href="/devSkills/new">New Dev Skill</a>
-    <h1>Developer Skills</h1>
-    <ul>
-      <% devSkills.forEach(function(d) { %>
-      <li>
-        <a href="/devSkills/<%= d.id %>"><%= d.devSkill %></a>
-      </li>
-      <% }); %>
-    </ul>
+    <h1>New Dev Skill</h1>
+
+    <form action="/devSkills" method="POST" autocomplete="off">
+      <input name="devSkill" />
+      <button type="submit" class="btn btn-primary">Save Todo</button>
+    </form>
   </body>
 </html>
