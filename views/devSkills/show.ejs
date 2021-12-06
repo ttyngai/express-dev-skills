@@ -19,9 +19,15 @@
     <a href="/devSkills/new">New Dev Skill</a>
     <h3><%= devSkill.devSkill %></h3>
     <h3>Proficieny: <%= devSkill.mastery%></h3>
-    <form action="/devSkills/<%= devSkill.id %>?_method=DELETE" method="POST">
+    <form style="float: left" action="/devSkills/<%= devSkill.id %>/edit">
+      <button type="submit" class="btn btn-primary">EDIT</button>
+    </form>
+    <form
+      style="float: left"
+      action="/devSkills/<%= devSkill.id %>?_method=DELETE"
+      method="POST"
+    >
       <button type="submit" class="btn btn-danger">X</button>
     </form>
-    <a href="/devSkills/<%= devSkill.id %>/edit">Edit</a>
   </body>
 </html>
